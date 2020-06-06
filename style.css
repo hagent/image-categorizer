@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-auto-rows: 200px;
+  justify-content: center;
+}
+
+.image {
+  overflow: hidden;
+  display: grid;
+}
+
+.image img {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.categories {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.categories button {
+  background: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.categories button.active-category {
+  background: rgba(0, 255, 0, 0.3);
+}
+
+.categories button.active-category.category-exclude {
+  background: rgba(255, 0, 0, 0.3);
+}
+
+.categories button.category-exclude {
+  flex: 0;
+}
+
+.categories .category-button {
+  flex: 1;
+  text-transform: capitalize;
+  font-size: large;
+}
+
+.categories .category-button:hover:not(.active-category) {
+  font-size: larger;
+  background: rgba(0, 0, 255, 0.2);
+}
+
+.categories .zoom-button {
+  color: gray;
+  font-weight: bold;
+}
+
+.zoom-button:hover {
+  font-size: larger;
+  background: rgba(0, 0, 255, 0.2);
+}
+
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 255, 0.1);
+}
+
+.buttons > * {
+  margin-right: 10px;
+}
+
+#save {
+  margin-right: 0;
+}
+
+.buttons button {
+  padding: 10px;
+  width: 70px;
+  border-radius: 8px;
+}
+
+#page-label {
+  flex: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+#zoomed-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  max-height: 90%;
+  margin: auto auto;
+}
